@@ -8,27 +8,59 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".PositionActivity" >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="horizontal" >
+        android:layout_centerVertical="true" >
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayoutProvider"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal" >
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textViewProviderLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/provider_label"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textViewProviderValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutLatitude"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_below="@+id/linearLayoutProvider"
+            android:orientation="horizontal" >
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textViewLatitudeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latitude_label"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textViewLatitudeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

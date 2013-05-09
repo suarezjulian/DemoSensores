@@ -16,5 +16,7 @@
     <string name="title_activity_position">Posición</string>
     <string name="title_activity_touch_screen">Pantalla Táctil</string>
     <string name="title_activity_accelerometer">Acelerómetro</string>
+    <string name="provider_label">Tipo:</string>
+    <string name="latitude_label">Latitud:</string>
 
 </resources>

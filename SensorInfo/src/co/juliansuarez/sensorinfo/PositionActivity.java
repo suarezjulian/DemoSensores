@@ -1,14 +1,20 @@
 package co.juliansuarez.sensorinfo;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.os.Build;
 
-public class PositionActivity extends Activity {
+public class PositionActivity extends Activity implements LocationListener {
+
+	private LocationManager locationManager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +22,28 @@ public class PositionActivity extends Activity {
 		setContentView(R.layout.activity_position);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		// Acquire a reference to the system Location Manager
+		locationManager = (LocationManager) this
+				.getSystemService(Context.LOCATION_SERVICE);
+
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		// Register the listener with the Location Manager to receive location
+		// updates
+		locationManager.requestLocationUpdates(
+				LocationManager.NETWORK_PROVIDER, 0, 0, this);
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
+				0, this);
+	}
+
+	@Override
+	protected void onStop() {
+		locationManager.removeUpdates(this);
+		super.onStop();
 	}
 
 	/**
@@ -50,6 +78,30 @@ public class PositionActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onLocationChanged(Location location) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
