@@ -15,7 +15,7 @@ Desarrollado Por
 
 
 
-Licensia
+Licencia
 =======
 
     Copyright 2013 Julian Camilo Suárez Lopera
