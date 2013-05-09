@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SensorInfo</string>
+    <string name="action_settings">Settings</string>
+    <string name="valueLabel">Valor:</string>
+
+    <string-array name="sensors_list">
+        <item>Proximidad</item>
+        <item>Posición</item>
+        <item>Pantalla Táctil</item>
+        <item>Acelerómetro</item>
+    </string-array>
+
+    <string name="title_activity_proximity">Proximidad</string>
+    <string name="title_activity_position">Posición</string>
+    <string name="title_activity_touch_screen">Pantalla Táctil</string>
+    <string name="title_activity_accelerometer">Acelerómetro</string>
+
+</resources>
