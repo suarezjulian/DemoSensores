@@ -18,5 +18,10 @@
     <string name="title_activity_accelerometer">Acelerómetro</string>
     <string name="provider_label">Tipo:</string>
     <string name="latitude_label">Latitud:</string>
+    <string name="longitude_label">Longitud:</string>
+    <string name="altitude_label">Altitud:</string>
+    <string name="accuracy_label">Exactitud:</string>
+    <string name="y_label">Y:</string>
+    <string name="x_label">X:</string>
 
 </resources>
