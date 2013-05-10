@@ -3,6 +3,8 @@ DemoSensores
 
 Demo Sensores para curso Instrumentacion UAN
 
+El archivo SnesoresInfo.apk puede ser instalado en cualquier dispositivo android con Android 2.3 (Gingerbread) o superior
+
 
 Para poder compilar este demo desde su computador es necesario instalar el Android SDK (http://developer.android.com/sdk/index.html)
 
