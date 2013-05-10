@@ -1,14 +1,25 @@
 package co.juliansuarez.sensorinfo;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.os.Build;
+import android.widget.TextView;
 
-public class AccelerometerActivity extends Activity {
+public class AccelerometerActivity extends Activity implements
+		SensorEventListener {
+
+	private SensorManager mSensorManager;
+	private TextView textViewXValue;
+	private TextView textViewYValue;
+	private TextView textViewZValue;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +27,13 @@ public class AccelerometerActivity extends Activity {
 		setContentView(R.layout.activity_accelerometer);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		textViewXValue = (TextView) findViewById(R.id.textViewXValue);
+		textViewYValue = (TextView) findViewById(R.id.textViewYValue);
+		textViewZValue = (TextView) findViewById(R.id.textViewZValue);
+
+		mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
 	}
 
 	/**
@@ -26,6 +44,20 @@ public class AccelerometerActivity extends Activity {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		mSensorManager.registerListener(this,
+				mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+				SensorManager.SENSOR_DELAY_NORMAL);
+	}
+
+	@Override
+	protected void onStop() {
+		mSensorManager.unregisterListener(this);
+		super.onStop();
 	}
 
 	@Override
@@ -50,6 +82,26 @@ public class AccelerometerActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onSensorChanged(SensorEvent event) {
+		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+			float x = event.values[0];
+			float y = event.values[1];
+			float z = event.values[2];
+			textViewXValue.setText(Float.toString(x));
+			textViewYValue.setText(Float.toString(y));
+			textViewZValue.setText(Float.toString(z));
+
+		}
+
 	}
 
 }

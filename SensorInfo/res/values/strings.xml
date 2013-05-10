@@ -23,5 +23,6 @@
     <string name="accuracy_label">Exactitud:</string>
     <string name="y_label">Y:</string>
     <string name="x_label">X:</string>
+    <string name="z_label">Z:</string>
 
 </resources>

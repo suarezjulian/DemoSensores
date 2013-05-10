@@ -17,14 +17,14 @@
         android:layout_centerVertical="true" >
 
         <LinearLayout
-            android:id="@+id/linearLayoutProvider"
+            android:id="@+id/linearLayoutX"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/textViewProviderLabel"
+                android:id="@+id/textViewXLabel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -41,14 +41,14 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayoutLatitude"
+            android:id="@+id/linearLayoutY"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayoutProvider"
+            android:layout_below="@+id/linearLayoutX"
             android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/textViewLatitudeLabel"
+                android:id="@+id/textViewYLabel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -68,11 +68,11 @@
             android:id="@+id/linearLayoutLongitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayoutLatitude"
+            android:layout_below="@+id/linearLayoutY"
             android:orientation="horizontal" >
 
             <TextView
-                android:id="@+id/textViewLongitudeLabel"
+                android:id="@+id/textViewZLabel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
